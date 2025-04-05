@@ -20,6 +20,7 @@ dependencies:
   http:
   cloud_firestore:
   firebase_auth:
+  shared_preferences: ^2.0.15
 
   # DI
   get_it:
