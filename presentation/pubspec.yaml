@@ -25,7 +25,6 @@ dependencies:
   http: ^0.13.3
   email_validator: ^2.1.17
   firebase_core:
-  shared_preferences: ^2.2.3
 
   # State management
   flutter_bloc:
