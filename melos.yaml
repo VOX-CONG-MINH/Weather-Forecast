@@ -1,0 +1,33 @@
+name: go_weather_forecast
+
+packages:
+  - ./data
+  - ./domain
+  - ./shared
+  - ./initializer
+  - ./presentation
+
+command:
+  bootstrap:
+    runPubGetInParallel: false
+  clean:
+    hooks:
+      post: melos exec --flutter --concurrency=3 -- "flutter clean"
+
+scripts:
+  # build runner build
+  build_all:
+    run: dart pub global run melos exec --depends-on="build_runner" "dart run build_runner build --delete-conflicting-outputs"
+    description: build_runner build all modules.
+
+  build_data:
+    run: dart pub global run melos exec --fail-fast --scope="*data*" --depends-on="build_runner" "dart run build_runner build --delete-conflicting-outputs"
+    description: build_runner build data module.
+
+  build_domain:
+    run: dart pub global run melos exec --fail-fast --scope="*domain*" --depends-on="build_runner" "dart run build_runner build --delete-conflicting-outputs"
+    description: build_runner build domain module.
+
+  build_pre:
+    run: dart pub global run melos exec --fail-fast --scope="*presentation*" --depends-on="build_runner" "dart run build_runner build --delete-conflicting-outputs"
+    description: build_runner build presentation module.

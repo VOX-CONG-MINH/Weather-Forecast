@@ -1,0 +1,21 @@
+name: initializer
+description: "A new Flutter package project."
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.7.2
+  flutter: ">=1.17.0"
+
+dependencies:
+  data:
+    path: ../data
+  domain:
+    path: ../domain
+  flutter:
+    sdk: flutter
+  shared:
+    path: ../shared
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
